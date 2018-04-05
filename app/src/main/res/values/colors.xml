@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- Shared colors -->
+    <color name="colorLightBlue">#04f0fd</color>
+    <color name="colorRed">#ff0007</color>
+    <color name="colorRedPressed">#D70000</color>
+    <color name="colorGreen">#02fd05</color>
+    <color name="colorDarkGreenPressed">#00D500</color>
+    <color name="colorBlue">#008cfd</color>
+    <color name="colorBluePressed">#0064D5</color>
+    <color name="colorDarkBlue">#013148</color>
+    <color name="colorDarkBluePressed">#000016</color>
+    <color name="colorYellow">#fdfd01</color>
+    <color name="colorDarkYellowPressed">#D5D500</color>
+    <color name="colorGray">#bebfbd</color>
+    <color name="colorOrange">#fe9802</color>
+    <color name="colorNavBarBorderGreen">#057a5e</color>
+    <color name="colorNavBarBorderGray">#64686d</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorLoading">#A67489a3</color>
+
+
+
+    <!-- Scroll bar colors -->
+    <color name="colorScrollBarThumb">#76797a</color>
+    <color name="colorScrollBarTrack">#e7eaed</color>
+
+
+    <!-- Waiting tab colors -->
+
+    <!-- navigation bar colors -->
+    <color name="colorWaitingNavBarUnselected">#7489a3</color>
+    <color name="colorWaitingNavBarSelected">#576679</color>
+    <!-- Waiting tab Recycler Colors -->
+    <color name="colorWaitingRecyclerBgd">#fd858f</color>
+    <color name="colorWaitingRecyclerDarkBgd">#cb6a72</color>
+    <!-- Waiting tab background color -->
+    <color name="colorWaitingBackground">#a0ccfd</color>
+
+
+    <!-- Started tab color -->
+    <!-- navigation bar colors -->
+    <color name="colorStartedNavBarUnselected">#97a395</color>
+    <color name="colorStartedNavBarSelected">#717a6f</color>
+    <!-- Started tab Recycler Colors -->
+    <color name="colorStartedRecyclerBgd">#90fe92</color>
+    <color name="colorStartedRecyclerDarkBgd">#72cc75</color>
+    <!-- Started tab background color -->
+    <color name="colorStartedBackground">#e7fee4</color>
+
+
+    <!-- Pickup tab color -->
+    <!-- navigation bar colors -->
+    <color name="colorPickupNavBarUnselected">#8b99a3</color>
+    <color name="colorPickupNavBarSelected">#68727a</color>
+    <!-- Pickup tab Recycler Colors -->
+    <color name="colorPickupRecyclerBgd">#88c6fd</color>
+    <color name="colorPickupRecyclerDarkBgd">#6d9ecb</color>
+    <!-- Pickup tab background color -->
+    <color name="colorPickupBackground">#cfebfe</color>
+
+    <!-- Deliver tab color -->
+    <!-- navigation bar colors -->
+    <color name="colorDeliverNavBarUnselected">#a4a193</color>
+    <color name="colorDeliverNavBarSelected">#7b796e</color>
+    <!-- Deliver tab Recycler Colors -->
+    <color name="colorDeliverRecyclerBgd">#fecb8e</color>
+    <color name="colorDeliverRecyclerDarkBgd">#cca272</color>
+    <!-- Deliver tab background color -->
+    <color name="colorDeliverBackground">#fffbdf</color>
+
+    <color name="colorPurple">#3A1C80</color>
+
+</resources>
