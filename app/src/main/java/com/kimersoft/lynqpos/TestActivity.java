@@ -3,6 +3,7 @@ package com.kimersoft.lynqpos;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -34,6 +35,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        makeFullscreen();
 
         Button button2 = (Button) findViewById(R.id.button2);
         Button button3 = (Button) findViewById(R.id.button3);
@@ -175,81 +177,6 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void chipCardReader() {
-//        StartCSwiperParam sp = new StartCSwiperParam();
-//        sp.setAmount("000000000100"); //Set the amount, unit points
-//        sp.setTransType(CommEnum.SDK_TRANS_TYPE. SDK_FUNC_SALE ); //Transaction Type
-//        sp.setTrackenc(true);//Whether to enable track encryption
-//
-//        sp.setMagFlag(false);//Use magnetic stripe card (card mode 2)
-//        sp.setIcFlag(true);//Use an IC card (card mode 3)
-//        sp.setRfFlag(false); // set true for contact less (card mode 4)
-//
-////        //Custom tag list
-////        List<byte[]> tags = new ArrayList<byte[]>();
-////        tags.add( new byte[]{ (byte)0x9F ,(byte) 0x27} );
-////        tags.add( new byte[]{ (byte)0x9F ,(byte) 0x10} );
-////        tags.add( new byte[]{ (byte)0x9F ,(byte) 0x37} );
-////        tags.add( new byte[]{ (byte)0x9F ,(byte) 0x36} );
-////        tags.add( new byte[]{ (byte)0x95} );
-////        tags.add( new byte[]{ (byte)0x9A} );
-////        tags.add( new byte[]{ (byte)0x9C} );
-////        tags.add( new byte[]{ (byte)0x9F ,(byte) 0x02} );
-////        tags.add( new byte[]{ (byte)0x5F ,(byte) 0x2A} );
-////        tags.add( new byte[]{ (byte)0x82} );
-////        tags.add( new byte[]{ (byte)0x9F ,(byte) 0x1A} );
-////        tags.add( new byte[]{ (byte)0x9F ,(byte) 0x03} );
-////        tags.add( new byte[]{ (byte)0x9F ,(byte) 0x33} );
-////        tags.add( new byte[]{ (byte)0x9F ,(byte) 0x34} );
-////        tags.add( new byte[]{ (byte)0x9F ,(byte) 0x35} );
-////        tags.add( new byte[]{ (byte)0x9F ,(byte) 0x1E} );
-////        tags.add( new byte[]{ (byte)0x84} );
-////        tags.add( new byte[]{ (byte)0x9F ,(byte) 0x09} );
-////        tags.add( new byte[]{ (byte)0x9F ,(byte) 0x41} );
-////        tags.add( new byte[]{ (byte)0x9F ,(byte) 0x63} );
-////        tags.add( new byte[]{ (byte)0x9F ,(byte) 0x26} );
-////        sp.setTags( tags );
-//
-//        mfapi.StartCSwiper( sp , new StartCSwiperListener() {
-//            @Override
-//            public void OnReturn(StartCSwiperResult ret) {
-//                StringBuilder sb = new StringBuilder();
-//                sb.append( "result: " + ret.getError().toString() + "\n" );
-//                sb.append( "Card mode: " + ret.getCardType() + "\n" );
-//
-//                sb.append( "Main account number: " + ret.getPan() + "\n"  );
-//                String expiryDate = ret.getExpData();
-//                sb.append( "Card is valid: Year 20" + expiryDate.substring(0,2) + " Month: " +expiryDate.substring(2,4)  + "\n" );
-//
-//                sb.append( "Service code: " + ret.getServiceCode() + "\n"   );
-//
-//                sb.append( "track one length: " + ret.getTrack1Len() + "\n"  );
-//                sb.append( "Track one message: " + ret.getsTrack1()  + "\n" );
-//                sb.append( "track two length: " + ret.getTrack2Len() + "\n"  );
-//                sb.append( "Track two message: " + ret.getsTrack2()  + "\n" );
-//                sb.append( "track three length: " + ret.getTrack3Len() + "\n"  );
-//                sb.append( "Track three message: " + ret.getsTrack3() + "\n"  );
-//
-//                sb.append( "Card serial number: " + ret.getPansn() + "\n"  );
-//                sb.append( "IC card data: " + Misc. hex2asc (ret.getTlvData() ,
-//                        ret.getDatalen(), 0 )  + "\n"   );
-//
-//                Log.d("Log", "IC CHIP card Result: " + sb.toString());
-//
-//                new AlertDialog.Builder(MainActivity.this, R.style.AlertDialog_AppCompat)
-//                        .setTitle("Retrive data")
-//                        .setMessage(sb.toString())
-//                        .setCancelable(false)
-//                        .setNegativeButton("OK", new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialog, int which) {
-//                                CardProc.CardProcEnd();
-//                            }
-//                        })
-//                        .show();
-//
-//                //CardProc.CardProcEnd(); // ends swiper scanner
-//            }
-//        });
         alertDialog = new AlertDialog.Builder(this,R.style.AlertDialog_AppCompat)
                 .setTitle("Card reader")
                 .setMessage("Executing,Please wait")
@@ -620,4 +547,21 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    // hide UI action bar and make the app fullscreen
+    public void makeFullscreen() {
+        getSupportActionBar().hide();
+        // API 19 (Kit Kat)
+        if (Build.VERSION.SDK_INT >= 19) {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    // View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+            );
+        } else {
+            if (Build.VERSION.SDK_INT > 10) {
+                getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            }
+        }
+    }
 }

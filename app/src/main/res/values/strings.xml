@@ -7,6 +7,7 @@
     <string name="signInUsername">USERNAME </string>
     <string name="signInPassword">PASSWORD</string>
     <string name="signInSignIn">LOGIN</string>
+    <string name="ok">Ok</string>
 
     <!-- TestActivity -->
     <string name="button2">Magnetic (MagFlag) card reader</string>

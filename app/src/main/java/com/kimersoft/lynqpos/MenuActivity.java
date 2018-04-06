@@ -37,9 +37,9 @@ public class MenuActivity extends AppCompatActivity {
         analytics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent i = new Intent(getBaseContext(), PSAMTestActivity.class);
-                //i.putExtra("Source","menu");
-                //startActivity(i);
+                Intent i = new Intent(getBaseContext(), CardReader.class);
+                i.putExtra("Source","menu");
+                startActivity(i);
             }
         });
 

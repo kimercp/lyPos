@@ -17,9 +17,6 @@
 
     <!-- NFC权限声明 -->
     <uses-permission android:name="android.permission.NFC" />
-
-
-
     <uses-permission android:name="com.morefun.permission.CLOUDPOS_MSR" />
     <!-- 读写非接触式卡片数据 -->
     <uses-permission android:name="com.morefun.permission.CLOUDPOS_CONTACTLESS_CARD" />
@@ -50,7 +47,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".SignInActivity"
             android:screenOrientation="portrait">
@@ -60,13 +56,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity"/>
-
-        <activity android:name=".MenuActivity"/>
-
-        <activity android:name=".TestActivity"/>
-
+        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".TestActivity"></activity>
+        <activity android:name=".CardReader"></activity>
     </application>
 
 </manifest>
