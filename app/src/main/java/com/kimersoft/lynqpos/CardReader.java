@@ -3,6 +3,7 @@ package com.kimersoft.lynqpos;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,11 +27,24 @@ public class CardReader extends AppCompatActivity {
     private Api mfapi;
     private AlertDialog alertDialog;
 
+    private String qrResult, source;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_reader);
-        makeFullscreen();
+
+//        makeFullscreen();
+
+        Intent i = getIntent();
+        if (i.getStringExtra("Source").equals("menu")) {
+            source = i.getStringExtra("Source");
+        }
+        else {
+            qrResult = i.getStringExtra("qrResult");
+        }
+
+        Toast.makeText(this, qrResult, Toast.LENGTH_SHORT).show();
 
         mfapi = Api.Create(CardReader.this);
         initAidCpak(this);

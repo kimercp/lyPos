@@ -19,7 +19,7 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        makeFullscreen();
+//        makeFullscreen();
 
         first= findViewById(R.id.first);
         second= findViewById(R.id.second);
@@ -28,8 +28,8 @@ public class MenuActivity extends AppCompatActivity {
         card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent i = new Intent(getBaseContext(), CaptureActivity.class);
-               // startActivity(i);
+                Intent i = new Intent(getBaseContext(), CaptureActivity.class);
+                startActivity(i);
             }
         });
 

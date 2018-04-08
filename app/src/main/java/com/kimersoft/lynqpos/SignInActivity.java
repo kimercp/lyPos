@@ -40,7 +40,7 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        makeFullscreen();
+//        makeFullscreen();
 
         try {
             ProviderInstaller.installIfNeeded(getBaseContext());
@@ -91,6 +91,8 @@ public class SignInActivity extends AppCompatActivity {
                                 final String token = (String) response;
                                 User u = new User();
                                 u.setToken(token);
+                                // delete later
+                                Toast.makeText(SignInActivity.this, token, Toast.LENGTH_SHORT).show();
                                 u.setEmail(email);
                                 u.setPassword(password);
                                 User.setCurrentUserAfterLogin(u, SignInActivity.this);

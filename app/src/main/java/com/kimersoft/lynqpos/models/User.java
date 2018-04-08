@@ -3,6 +3,7 @@ package com.kimersoft.lynqpos.models;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.widget.Toast;
 
 /**
  * Created by souhaibbenfarhat on 8/31/17.

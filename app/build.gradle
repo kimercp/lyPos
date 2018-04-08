@@ -4,10 +4,11 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.kimersoft.lynqpos"
-        minSdkVersion 19
+        minSdkVersion 17
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -16,23 +17,42 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    android {
+        lintOptions {
+            checkReleaseBuilds false
+            // Or, if you prefer, you can continue to check for errors in release builds,
+            // but continue the build even when errors are found:
+            abortOnError false
+
+        }
+
+
+    }
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'com.android.support:support-v4:27.0.2'
+    implementation 'com.android.support:design:27.0.2'
+
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-    // added
-    compile 'com.google.android.gms:play-services-auth:11.0.4'
-    //    implementation 'com.android.support:support-v4:27.0.2'
-    //    implementation 'com.android.support:recyclerview-v7:27.0.2'
-    //    implementation 'com.github.bumptech.glide:glide:4.0.0'
-    //    implementation 'com.android.support:design:27.0.2'
-    // external libraries
+
+    // external libraries added
+    implementation 'com.google.android.gms:play-services-auth:11.0.4'
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.airbnb.android:lottie:2.1.2'
     implementation files('libs/mfsdk.jar')
+    implementation files('libs/core.jar')
+
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+//    compile 'com.github.bumptech.glide:glide:3.7.0'
+//    implementation 'com.android.support:recyclerview-v7:27.0.2'
+//    compile 'co.paystack.android.design.widget:pinpad:1.0.1'
+//    compile 'com.squareup.picasso:picasso:2.5.2'
+//    compile 'com.ss.bannerslider:bannerslider:1.8.0'
 }
